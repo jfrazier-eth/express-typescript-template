@@ -5,7 +5,7 @@
 ### Stack
 * [ExpressJS](https://expressjs.com/)
 * [TypeScript](https://www.typescriptlang.org/)
-* [PM2](https://pm2.io/) processs manager for running in production
+* [PM2](https://pm2.io/) - processs manager for running in production
 
 ### Tools
 * [yarn](https://yarnpkg.com/)
@@ -14,7 +14,7 @@
 * [prettier](https://prettier.io/)
 * [eslint](https://eslint.org/)
     * Uses [eslint-plugin-unicord](https://github.com/sindresorhus/eslint-plugin-unicorn)
-* [tsyringe](https://github.com/microsoft/tsyringe) Lightweight dependency injection container
+* [tsyringe](https://github.com/microsoft/tsyringe) - Lightweight dependency injection container
 
 
 ### Notes
