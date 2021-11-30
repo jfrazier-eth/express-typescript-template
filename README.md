@@ -16,6 +16,14 @@
     * Uses [eslint-plugin-unicord](https://github.com/sindresorhus/eslint-plugin-unicorn)
 * [tsyringe](https://github.com/microsoft/tsyringe) - Lightweight dependency injection container
 
+## Getting Started 
+* Click "Use this template" on github
+* Clone the repo that was created
+* Update the repository and author fields in `package.json`
+* Install dependencies `yarn install`
+* Start the server in development mode `yarn dev`
+* Start the server in production mode `yarn start`
+* Stop the server running in production mode `yarn stop`
 
 ### Notes
 * CommonJS module
