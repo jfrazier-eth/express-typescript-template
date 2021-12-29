@@ -11,14 +11,13 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
+    "mongodb": "^4.2.2",
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.11",
     "concurrently": "^6.4.0",
-    "eslint": "^8.3.0",
-    "eslint-plugin-unicorn": "^39.0.0",
     "nodemon": "^2.0.15",
     "pm2": "^5.1.2",
     "prettier": "^2.5.0",
@@ -27,25 +26,17 @@
     "tsconfig-paths": "^3.12.0",
     "typescript": "^4.5.2"
   },
-  "eslintConfig": {
-    "extends": "plugin:unicorn/recommended",
-    "rules": {
-      "unicorn/prevent-abbreviations": 0,
-      "unicorn/prefer-module": 0
-    }  
-  },
   "scripts": {
     "clean": "rimraf ./dist",
     "start": "pm2 start yarn -- build-and-serve",
     "stop": "pm2 stop default",
-    "dev": "yarn lint && yarn clean && cross-env NODE_ENV=development yarn serve-dev",
+    "dev": "yarn clean && cross-env NODE_ENV=development yarn serve-dev",
     "build-and-serve": "yarn build && pm2 start yarn -- serve",
     "build": "yarn clean && yarn compile",
     "serve": "node -r dotenv/config -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
     "compile": "tsc",
     "serve-dev": "cross-env NODE_ENV=development concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"yarn run watch-ts\" \"yarn run watch-node\"",
     "watch-ts": "tsc -w",
-    "watch-node": "nodemon -r dotenv/config -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
-    "lint": "eslint . --ext .js,.ts --fix"
+    "watch-node": "nodemon -r dotenv/config -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js"
   }
 }
